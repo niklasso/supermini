@@ -22,10 +22,12 @@ option(USE_SORELEASE   "Use SORELEASE in shared library filename." ON)
 
 if(STATIC_BINARIES)
   set(CMAKE_EXE_LINKER_FLAGS "-static")
+  #set_property(GLOBAL PROPERTY LINK_SEARCH_START_STATIC TRUE) // Available in the future?
 endif()
 
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -g -DNDEBUG")
+#set(CMAKE_CXX_FLAGS_RELEASE "-O3 -g -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -g -DNDEBUG -fomit-frame-pointer")
 
 add_definitions(-D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS)
 add_definitions(-Wall -Wno-parentheses)
