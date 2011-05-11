@@ -39,5 +39,6 @@ project(all)
 
 add_subdirectory(minisat)
 add_subdirectory(minisat-examples)
+add_subdirectory(minisat-tests)
 add_subdirectory(mcl)
 add_subdirectory(tip3)
