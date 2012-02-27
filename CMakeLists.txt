@@ -39,7 +39,10 @@ if(STATIC_BINARIES)
 endif()
 
 add_definitions(-D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS)
-add_definitions(-Wall -Wno-parentheses)
+#add_definitions(-Wall -Wno-parentheses)
+#add_definitions(-Wall -Werror)
+add_definitions(-Wall)
+add_definitions(-DMINISAT_CONSTANTS_AS_MACROS)
 
 #--------------------------------------------------------------------------------------------------
 # Submodules: (comment the modules you don't have or need)
