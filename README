@@ -1,0 +1,14 @@
+This is a super-project of some MiniSat related projects to help
+building libraries and tools with CMake.
+
+To install/build:
+================
+
+* Download the pieces that you are interested in and place them in
+  subdirectories. Feel free to rename them if you match the name in
+  CMakeLists.txt
+
+* Uncomment the "add_subdirectory" lines for the pieces you don't
+  need.
+
+* Build as usual with CMake.
