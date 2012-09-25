@@ -30,6 +30,7 @@ endif()
 option(STATIC_BINARIES "Link binaries statically." ON)
 option(USE_SORELEASE   "Use SORELEASE in shared library filename." ON)
 
+
 #--------------------------------------------------------------------------------------------------
 # Compile flags:
 
@@ -49,10 +50,11 @@ add_definitions(-DMINISAT_CONSTANTS_AS_MACROS)
 
 project(all)
 
-add_subdirectory(minisat)
-add_subdirectory(minisat-examples)
-add_subdirectory(minisat-tests)
-#add_subdirectory(mcl)
-add_subdirectory(mcl2)
+#add_subdirectory(minisat-examples)
+#add_subdirectory(minisat-tests)
 #add_subdirectory(msup)
-add_subdirectory(tip3)
+
+add_subdirectory(minisat)
+add_subdirectory(minisatp)
+add_subdirectory(mcl)
+add_subdirectory(tip)
