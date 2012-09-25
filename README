@@ -4,11 +4,42 @@ building libraries and tools with CMake.
 To install/build:
 ================
 
-* Download the pieces that you are interested in and place them in
-  subdirectories. Feel free to rename them if you match the name in
-  CMakeLists.txt
+* Initialize and download the submodules that you are interested in:
 
-* Uncomment the "add_subdirectory" lines for the pieces you don't
-  need.
+  > git submodule init <list-of-submodules>
+  > git submodule update
 
-* Build as usual with CMake.
+* Create a build directory somewhere and cd into it. Then build and
+  configure with:
+
+  > (c)cmake <path-to-src-root>
+  > make
+  > make install (optional)
+
+Example 1: Building only the pseudo-boolean solver MiniSat+
+============================
+
+  > cd <somewhere-you-want-to-place-files>
+  > mkdir build
+  > git clone git://github.com/niklasso/supermini.git supermini
+  > cd supermini
+  > git submodule init minisat minisatp
+  > git submodule update
+  > cd ../build
+  > ccmake ../supermini
+  [choose possible options]
+  > make minisatp
+
+Example 2: Building only the model checker Tip
+============================
+
+  > cd <somewhere-you-want-to-place-files>
+  > mkdir build
+  > git clone git://github.com/niklasso/supermini.git supermini
+  > cd supermini
+  > git submodule init minisat mcl tip
+  > git submodule update
+  > cd ../build
+  > ccmake ../supermini
+  [choose possible options]
+  > make tip
