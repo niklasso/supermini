@@ -54,7 +54,18 @@ project(all)
 #add_subdirectory(minisat-tests)
 #add_subdirectory(msup)
 
-add_subdirectory(minisat)
-add_subdirectory(minisatp)
-add_subdirectory(mcl)
-add_subdirectory(tip)
+if(EXISTS "${CMAKE_SOURCE_DIR}/minisat/CMakeLists.txt")
+  add_subdirectory(minisat)
+endif()
+
+if(EXISTS "${CMAKE_SOURCE_DIR}/minisatp/CMakeLists.txt")
+  add_subdirectory(minisatp)
+endif()
+
+if(EXISTS "${CMAKE_SOURCE_DIR}/mcl/CMakeLists.txt")
+  add_subdirectory(mcl)
+endif()
+
+if(EXISTS "${CMAKE_SOURCE_DIR}/tip/CMakeLists.txt")
+  add_subdirectory(tip)
+endif()
