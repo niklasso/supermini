@@ -24,6 +24,8 @@ else()
     "Choose the type of build, options are: None(CMAKE_CXX_FLAGS or CMAKE_C_FLAGS used) Debug DebugFast Profile Release.")
 endif()
 
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+
 #--------------------------------------------------------------------------------------------------
 # Configurable options:
 
